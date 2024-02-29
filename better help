@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Screening</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #57450e;
+            color: beige;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: rgb(87, 76, 51)#0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Screening</h1>
+        <form id="screening-form">
+            <div class="question">
+                <label for="q1">1. How often do you feel overwhelmed by all the things you have to do?</label>
+                <select id="q1" name="q1">
+                    <option value="0">Never</option>
+                    <option value="1">Sometimes</option>
+                    <option value="2">Often</option>
+                    <option value="3">Always</option>
+                </select>
+            </div>
+            <div class="question"> 
+                <label for="q2">2.Over past two weeks , how often have you been bothered by feeling down??</label>
+                <select id="q2" name="q2">
+                    <option value="0">Never</option>
+                    <option value="1">Sometimes</option>
+                    <option value="2">Often</option>
+                    <option value="3">Always</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q3">3.Do you feel like to be alone most of the time</label>
+                <select id="q3" name="q3">
+                    <option value="0">Never</option>
+                    <option value="1">Sometimes</option>
+                    <option value="2">Often</option>
+                    <option value="3">Always</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q4">4.How often do you feel nervous or anxious?</label>
+                <select id="q4" name="q4">
+                    <option value="0">Never</option>
+                    <option value="1">Sometimes</option>
+                    <option value="2">Often</option>
+                    <option value="3">Always</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q5">5.How often do you have trouble falling asleep or staying asleep?</label>
+                <select id="q5" name="q5">
+                    <option value="0">Never</option>
+                    <option value="1">Sometimes</option>
+                    <option value="2">Often</option>
+                    <option value="3">Always</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q6">6.How often do you experience intrusive thoughts or worries that you cannot control?</label>
+                <select id="q6" name="q6">
+                    <option value="0">Never</option>
+                    <option value="1">Sometimes</option>
+                    <option value="2">Often</option>
+                    <option value="3">Always</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('screening-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const responses = {
+                q1: parseInt(document.getElementById('q1').value),
+                // Add more response variables here
+            };
+            const mentalHealthStatus = evaluateMentalHealthStatus(responses);
+            document.getElementById('result').textContent = mentalHealthStatus;
+        });
+
+        function evaluateMentalHealthStatus(responses){
+
+            let mentalHealthStatus = 'You are doing well.';
+            if (responses.q1 >= 2) {
+                mentalHealthStatus= 'You may be experiencing some stress related to feeling overwhelmed by tasks. Consider reaching out for support.';
+}
+
+            return mentalHealthStatus;
+}
+    </script>
+</body>
+</html>
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental health awarness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mental Health Being</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#tips">Tips</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div id="home" class="content">
+            <h2>Welcome to our website!</h2>
+            <p>This website provides information and solutions to reduce mental stress.</p>
+        </div>
+        <div id="tips" class="content">
+            <h2>Mental health Tips</h2>
+            <ul>
+                <li>Avoid Overthinking</li>
+                <li>Get proper diet</li>
+                <li>Exercise daily</li>
+                <li>Spend time with loved ones</li>
+                <li>Try to spread kindness and positivity</li>
+            </ul>
+        </div>
+        <a href="page.html"><button>Take the Survey</button></a>
+        <div id="contact" class="content">
+            <div id="about" class="content">
+            <h2>About Us</h2>
+                <p>We are dedicated to raising awareness about mental health screening and providing practical solutions for individuals and communities.</p>
+            </div>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions, feel free to contact us at <a href="mailto:info@betterhelp.com">info@betterhelp.com</a>.</p>
+        </div>
+    </div>
+    <footer>
+        &copy; Better help
+    </footer>
+</body>
+</html>
+<head>
